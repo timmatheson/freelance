@@ -103,24 +103,32 @@ div.links a{
 
 div.inner{
   width: 950px;
-  margin: 1em 0;
+  margin: 0;
   padding: 1em 0;
   background: #fff;
 }
 
 ul.nav{
-  margin: -0.6em 0 1em 0;
+  margin: 0 0 0 1em;
   padding: 0;
 }
 
 ul.nav li{
   display: inline;
   padding: 0.5em 1em;
-  background: #DBE9D9;
-  border: 1px solid #8B9B85;
+  background: #121B32;
+}
+
+ul.nav li.current{
+  background: #ffffff;
+}
+
+ul.nav li.current a{
+  color: #000;
 }
 
 ul.nav li a{
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -140,4 +148,15 @@ table tr td{
 
 .center{
   text-align: center;
+}
+
+/* Buttons */
+a.button{font-size: 11px; text-decoration: none; }
+input.button,a.button{ color: #fff; border: none;}
+.button{
+  cursor: pointer;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  height: 30px;
+  background: url("../images/button-bg.png") repeat-x;
 }

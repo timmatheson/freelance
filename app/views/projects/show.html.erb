@@ -5,16 +5,16 @@
   <%=h @project.title %>
 </p>
 <p>
+  <strong>Git repo:</strong>
+  <%= @project.git_url %>
+</p>
+<p>
   <strong>Client:</strong>
-  <%=h @project.client_id %>
+  <%=h @project.client.company_name %>
 </p>
 <p>
   <strong>Due At:</strong>
-  <%=h @project.due_at %>
-</p>
-<p>
-  <strong>State:</strong>
-  <%=h @project.state %>
+  <%= @project.due_date %>
 </p>
 
 <h1>Tickets</h1>

@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_client_path(@client) %> |
-  <%= link_to "Destroy", @client, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "Cancel", clients_path %>
+  <%= button_to "Edit", edit_client_path(@client), :class => "button" %> |
+  <%= button_to "Delete", @client, :confirm => 'Are you sure?', :method => :delete, :class => "button" %> |
+  <%= button_to "Cancel", clients_path, :class => "button" %>
 </p>

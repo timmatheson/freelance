@@ -13,19 +13,16 @@
   </tr>
   <% for project in @projects %>
     <tr>
-      <%= render :partial => project %>
-    </tr>
-    <tr style="background: #DDD;">
-      <td>title</td>
-      <td>client</td>
-      <td>due</td>
-      <td>collabs</td>
-      <td><%= link_to "New Ticket", new_project_ticket_path(project) %></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%=h project.title %></td>
+      <td><%=h project.client_id %></td>
+      <td><%= project.due_date %></td>
+      <td><%=h project.collaborators %></td>
+      <td><small>Tickets: <%= link_to project.tickets.size, project_tickets_path(project) %></small></td>
+      <td><%= link_to "Show", project %></td>
+      <td><%= link_to "Edit", edit_project_path(project) %></td>
+      <td><%= link_to "Destroy", project, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Project", @client ? new_client_project_path(@client) : new_project_path %></p>
+<p><%= button_to "New Project", @client ? new_client_project_path(@client) : new_project_path, :class => "button" %></p>
