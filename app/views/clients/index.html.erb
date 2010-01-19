@@ -1,0 +1,24 @@
+<% title "Clients" %>
+
+<table>
+  <tr>
+    <th>Company Name</th>
+    <th>Url</th>
+    <th class="center">Projects</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% for client in @clients %>
+    <tr>
+      <td><%= link_to h(client.company_name), client_path(client) %></td>
+      <td><%= link_to client.url, client.url, :target => "_blank" %></td>
+      <td class="center"><%= link_to client.projects.count, client_projects_path(client) %></td>
+      <td><%= link_to "Show", client %></td>
+      <td><%= link_to "Edit", edit_client_path(client) %></td>
+      <td><%= link_to "Destroy", client, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Client", new_client_path %></p>

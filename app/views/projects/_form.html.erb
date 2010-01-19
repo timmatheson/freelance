@@ -1,0 +1,16 @@
+<% form_for @project do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :client_id %><br />
+    <%= f.collection_select :client_id, Client.all, :id, :company_name %>
+  </p>
+  <p>
+    <%= f.label :due_at %><br />
+    <%= f.datetime_select :due_at %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

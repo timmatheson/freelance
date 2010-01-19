@@ -1,0 +1,12 @@
+<% form_for @client do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

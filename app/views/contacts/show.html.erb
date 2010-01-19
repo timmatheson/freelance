@@ -1,0 +1,28 @@
+<% title "Contact" %>
+
+<p>
+  <strong>Firstname:</strong>
+  <%=h @contact.firstname %>
+</p>
+<p>
+  <strong>Lastname:</strong>
+  <%=h @contact.lastname %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @contact.email %>
+</p>
+<p>
+  <strong>Mobile Phone:</strong>
+  <%=h @contact.mobile_phone %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%=h @contact.phone %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_contact_path(@contact) %> |
+  <%= link_to "Destroy", @contact, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Cancel", contacts_path %>
+</p>

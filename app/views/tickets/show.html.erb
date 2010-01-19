@@ -1,0 +1,24 @@
+<% title "Ticket" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @ticket.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @ticket.description %>
+</p>
+<p>
+  <strong>Project:</strong>
+  <%=h @ticket.project.title %>
+</p>
+<p>
+  <strong>Assignee:</strong>
+  <%=h @ticket.user.fullname %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ticket_path(@ticket) %> |
+  <%= link_to "Destroy", @ticket, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Cancel", tickets_path %>
+</p>

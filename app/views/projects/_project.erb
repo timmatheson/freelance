@@ -1,0 +1,8 @@
+<td><%=h project.title %></td>
+<td><%=h project.client_id %></td>
+<td><%= project.due_date %></td>
+<td><%=h project.collaborators %></td>
+<td><small>Tickets: <%= link_to project.tickets.size, project_tickets_path(project) %></small></td>
+<td><%= link_to "Show", project %></td>
+<td><%= link_to "Edit", edit_project_path(project) %></td>
+<td><%= link_to "Destroy", project, :confirm => 'Are you sure?', :method => :delete %></td>

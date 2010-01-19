@@ -1,0 +1,37 @@
+<% title "Project" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @project.title %>
+</p>
+<p>
+  <strong>Client:</strong>
+  <%=h @project.client_id %>
+</p>
+<p>
+  <strong>Due At:</strong>
+  <%=h @project.due_at %>
+</p>
+<p>
+  <strong>State:</strong>
+  <%=h @project.state %>
+</p>
+
+<h1>Tickets</h1>
+
+<ul class="tickets">
+  <% @project.tickets.each do |ticket| %>
+    <li><%= ticket.id %></li>
+  <% end %>
+</ul>
+
+
+<p>
+  <%= link_to "Edit", edit_project_path(@project) %> |
+  <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Cancel", projects_path %>
+</p>
+
+<% content_for :sidebar do %>
+  <%= link_to "Add Tickect", new_project_ticket_path(@project) %>
+<% end %>

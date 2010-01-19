@@ -1,0 +1,16 @@
+<% title "Client" %>
+
+<p>
+  <strong>Company Name:</strong>
+  <%=h @client.company_name %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= link_to @client.url, @client.url, :target => "_blank" %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_client_path(@client) %> |
+  <%= link_to "Destroy", @client, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Cancel", clients_path %>
+</p>

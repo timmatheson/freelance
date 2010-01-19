@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag :defaults %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div class="container" style="width: 950px;">
+      <div class="span-9">
+        <%= link_to(image_tag("logo.png", :alt => "Freelance"), root_url) %>
+      </div>
+      <div class="span-14 links" style="text-align: right;">
+        <% if current_user %>
+          <%= link_to "Logout", logout_url %>
+        <% else %>
+          <%= link_to "Login", login_url %>
+        <% end %>
+      </div>
+        <div class="inner span-24">
+          <div class="span-24">
+          <ul class="nav">
+            <li><%= link_to "Clients", clients_path %></li>
+            <li><%= link_to "Projects", projects_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+          </ul>
+          </div>
+          <div class="span-24">
+            <div class="<%= current_layout(@controller) %>">
+              <div style="padding: 1em;">
+              <%- flash.each do |name, msg| -%>
+                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              <%- end -%>
+      
+              <%- if show_title? -%>
+                <h1><%=h yield(:title) %></h1>
+              <%- end -%>
+      
+              <%= yield %>
+            </div>
+            <% if @content_for_sidebar %>
+              <div class="span-6">
+                <%= yield :sidebar %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
