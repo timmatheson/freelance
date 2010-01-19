@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+admin:
+  name: admin
+
+developer:
+  name: developer
+
+client:
+  name: client

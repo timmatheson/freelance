@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <%= button_to "Edit", edit_client_path(@client), :class => "button" %> |
+  <%= button_to "Edit", edit_client_path(@client), :class => "button", :method => :get %> |
   <%= button_to "Delete", @client, :confirm => 'Are you sure?', :method => :delete, :class => "button" %> |
-  <%= button_to "Cancel", clients_path, :class => "button" %>
+  <%= button_to "Cancel", clients_path, :class => "button", :method => :get %>
 </p>

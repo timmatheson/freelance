@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
   
   private
   
@@ -24,6 +24,13 @@ class ApplicationController < ActionController::Base
     unless current_user_session
       flash[:error] = "Please login"
       redirect_to login_url 
+    end
+  end
+  
+  def role_required(role)
+    unless current_user.has_role?(role.to_s)
+      flash[:error] = "You do not have permission to access that resource."
+      redirect_to root_url
     end
   end
 end

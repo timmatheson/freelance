@@ -10,7 +10,7 @@ module ApplicationHelper
   end
   
   def cancel_button
-    button_to_function "Cancel", %(javascript:history.go(-1);), :class => "button"
+    button_to_function "Cancel", %(javascript:history.go(-1);), :class => "button", :method => :get
   end
   
   def current(controller)

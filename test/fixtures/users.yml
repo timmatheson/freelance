@@ -1,13 +1,17 @@
 one:
   username: MyString
+  firstname: Tim
+  lastname: Matheson
   crypted_password: MyString
   email: MyString
-  mobile_phone: MyString
-  phone: MyString
+  mobile_phone: 5555551212
+  phone: 5555551212
 
 two:
   username: MyString
+  firstname: Joe
+  lastname: Smith
   crypted_password: MyString
   email: MyString
-  mobile_phone: MyString
-  phone: MyString
+  mobile_phone: 5555551212
+  phone: 5555551212

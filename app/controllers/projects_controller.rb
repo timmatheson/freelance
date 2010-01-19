@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :login_required
+  before_filter :check_clients_exist, :only => [:new,:edit]
   before_filter :find_client, :if => Proc.new{ |c| c.params[:client_id] }
   
   def index
@@ -12,7 +13,11 @@ class ProjectsController < ApplicationController
   end
   
   def new
-    @project = Project.new
+    if @client
+      @project = @client.projects.build
+    else
+      @project = Project.new
+    end
   end
   
   def create
@@ -50,5 +55,12 @@ class ProjectsController < ApplicationController
   
   def find_client
     @client = Client.find(params[:client_id])
+  end
+  
+  def check_clients_exist
+    if Client.count == 0
+      flash[:error] = "Please create a client first."
+      redirect_to new_client_path
+    end
   end
 end

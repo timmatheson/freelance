@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   before_filter :login_required
+  before_filter :check_projects_exist, :only => [:new,:edit]
   
   def index
     @tickets = Ticket.all
@@ -42,5 +43,14 @@ class TicketsController < ApplicationController
     @ticket.destroy
     flash[:notice] = "Successfully destroyed ticket."
     redirect_to tickets_url
+  end
+  
+  private
+  
+  def check_projects_exist
+    if Project.count == 0
+      flash[:error] = "Please create a project first."
+      redirect_to new_project_path
+    end
   end
 end
