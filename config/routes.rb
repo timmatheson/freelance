@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :users
   map.resources :tickets
-  map.resources :clients, :has_many => :projects
+  map.resources :clients, :has_many => [:projects,:contacts]
   map.resources :projects, :has_many => :tickets
   map.resources :contacts do |contact_resource|
     contact_resource.resources :clients

@@ -15,4 +15,8 @@ class Project < ActiveRecord::Base
   def due_date
     due_at.strftime("%m/%d/%Y <small>(at %H:%M %p)</small>")
   end
+  
+  def past_due?
+    due_at < Time.now
+  end
 end

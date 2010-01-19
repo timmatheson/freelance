@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Title</th>
     <th>Client</th>
+    <th>Title</th>
     <th>Due Date</th>
     <th>Collaborators</th>
     <th>Tickets</th>
@@ -12,9 +12,9 @@
     <th>&nbsp;</th>
   </tr>
   <% for project in @projects %>
-    <tr>
-      <td><%=h project.title %></td>
-      <td><%=h project.client_id %></td>
+    <tr class="<%= project.past_due? ? 'past_due' : '' %>">
+      <td><%= link_to project.client.company_name, client_path(project.client) %></td>
+      <td><%= link_to h(project.title), client_project_path(project.client,project) %></td>
       <td><%= project.due_date %></td>
       <td><%=h project.collaborators %></td>
       <td><small>Tickets: <%= link_to project.tickets.size, project_tickets_path(project) %></small></td>

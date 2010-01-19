@@ -13,7 +13,7 @@
     <%= f.collection_select :client_id, Client.all, :id, :company_name %>
   </p>
   <p>
-    <%= f.label :due_at %><br />
+    <%= f.label :due_at, "Due Date" %><br />
     <%= f.datetime_select :due_at %>
   </p>
   <p><%= f.submit "Save", :class => "button" %> <%= cancel_button %></p>

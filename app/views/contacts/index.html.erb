@@ -25,4 +25,4 @@
   <% end %>
 </table>
 
-<p><%= button_to "New Contact", new_contact_path, :class => "button" %></p>
+<p><%= button_to "New Contact", new_client_contact_path(@client || params[:client_id]), :class => "button", :method => :get %></p>

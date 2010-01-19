@@ -160,3 +160,10 @@ input.button,a.button{ color: #fff; border: none;}
   height: 30px;
   background: url("../images/button-bg.png") repeat-x;
 }
+
+/* States */
+
+.past_due{
+  border: 1px solid #99383C;
+  background: #F3BDC0;
+}
