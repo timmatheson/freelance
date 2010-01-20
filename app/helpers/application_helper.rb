@@ -6,7 +6,8 @@ module ApplicationHelper
   
   def current_layout(controller)
     columns = { :two => "span-16", :one => "span-24" }
-    controller.action_name =~ /^index$/ ? columns[:one] : columns[:two]
+    actions = ([:index,:all] | Ticket.states).map(&:to_s).join("|")
+    controller.action_name =~ /^(#{actions})$/ ? columns[:one] : columns[:two]
   end
   
   def cancel_button

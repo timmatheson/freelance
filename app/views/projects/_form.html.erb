@@ -1,20 +1,20 @@
 <% form_for @project do |f| %>
   <%= f.error_messages %>
+  <p class="form_header">
+    <%= f.label :client_id %> 
+    <%= f.collection_select :client_id, Client.all, :id, :company_name %>
+    <br />
+    <br />
+    <%= f.label :due_at, "Due Date" %> 
+    <%= f.datetime_select :due_at %>
+  </p>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "title" %>
   </p>
   <p>
     <%= f.label :git_url, "Git repo url" %><br />
     <%= f.text_field :git_url %>
-  </p>
-  <p>
-    <%= f.label :client_id %><br />
-    <%= f.collection_select :client_id, Client.all, :id, :company_name %>
-  </p>
-  <p>
-    <%= f.label :due_at, "Due Date" %><br />
-    <%= f.datetime_select :due_at %>
   </p>
   <p><%= f.submit "Save", :class => "button" %> <%= cancel_button %></p>
 <% end %>

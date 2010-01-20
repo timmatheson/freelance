@@ -1,21 +1,19 @@
 <% title "Tickets" %>
-
 <table>
   <tr>
     <th>Title</th>
-    <th>Description</th>
     <th>Project</th>
     <th>Assignee</th>
     <th>&nbsp;</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <th colspan="2">
+      <label>By Status:</label> <%= tickets_by_status_select(params) %>
+    </th>
   </tr>
   <% for ticket in @tickets %>
     <tr>
       <td><%=h ticket.title %></td>
-      <td><%=h ticket.description %></td>
-      <td><%=h ticket.project_id %></td>
-      <td><%=h ticket.user.id %></td>
+      <td><%=h ticket.project.title %></td>
+      <td><%=h ticket.user.fullname %></td>
       <td><%= link_to "Show", ticket %></td>
       <td><%= link_to "Edit", edit_ticket_path(ticket) %></td>
       <td><%= link_to "Destroy", ticket, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :client
   has_many :users, :through => :tickets
-  has_many :tickets
+  has_many :tickets, :dependent => :destroy
   has_many :contacts, :through => :client
   
   def title_with_company

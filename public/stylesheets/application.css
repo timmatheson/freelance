@@ -30,6 +30,28 @@ a {
   color: #19232E;
 }
 
+form{
+  padding: 1em;
+  background: #DDD;
+}
+
+label{
+  margin: 0 0.2em;
+  font-weight: bold;
+}
+
+textarea{
+  width: 100%;
+}
+
+.form_header{
+  background: #EBFFFB; padding: 1em;
+}
+
+p{
+  margin: 1em 0;
+}
+
 .clear {
   clear: both;
   height: 0;
@@ -108,6 +130,14 @@ div.inner{
   background: #fff;
 }
 
+input.title{
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  height: 18px;
+  padding: 1px;
+}
+
 ul.nav{
   margin: 0 0 0 1em;
   padding: 0;
@@ -167,3 +197,4 @@ input.button,a.button{ color: #fff; border: none;}
   border: 1px solid #99383C;
   background: #F3BDC0;
 }
+

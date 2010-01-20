@@ -4,9 +4,10 @@
   <strong>Title:</strong>
   <%=h @ticket.title %>
 </p>
+<%= link_to "Accept", accept_ticket_path(@ticket) %>
 <p>
   <strong>Description:</strong>
-  <%=h @ticket.description %>
+  <%= markdown @ticket.description %>
 </p>
 <p>
   <strong>Project:</strong>

@@ -5,10 +5,6 @@
   <%=h @user.username %>
 </p>
 <p>
-  <strong>Password:</strong>
-  <%=h @user.password %>
-</p>
-<p>
   <strong>Email:</strong>
   <%=h @user.email %>
 </p>
@@ -22,7 +18,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_user_path(@user) %> |
-  <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "Cancel", users_path %>
+  <%= button_to "Edit", edit_user_path(@user), :class => "button", :method => :get %> <%= button_to "Destroy", @user, :confirm => 'Are you sure?', :class => "button", :method => :delete %> <%= cancel_button %>
 </p>
+
+
